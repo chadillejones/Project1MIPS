@@ -10,6 +10,7 @@ main:
 	li $a1, 11 #specify the length of the input
 	syscall
 	
+#deleted as it was only to test the user input	
 	 
 	#tell the system this is the end of file
 	li $v0, 10 
