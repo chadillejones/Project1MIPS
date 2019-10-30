@@ -1,4 +1,5 @@
 .data #Declaring data
+userInput .space 10 #stores the user input(10 chars)
 
 .text #Assembly language instruction
 
