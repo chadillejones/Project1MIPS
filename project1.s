@@ -12,7 +12,7 @@ main:
 	
 	la $t0, userInput #loads the string address in $t0
 	li $t1, 0 #initialized the sum of all the characters
-	li $t2, 32 #initialized a space to check for spaces
+	li $t3, 32 #initialized a space to check for spaces #changed this to a different register than $t2
 	li $t6, 0x0A #initialized a new line to signal when the loop is complete
 			 
 loop: #to loop through the characters of the string
@@ -21,5 +21,12 @@ loop: #to loop through the characters of the string
 	beq $t2, $t6, end_loop #ends loop when all the characters are used
 	
 	#tell the system this is the end of file
-	li $v0, 10 
-	syscall
+	#li $v0, 10 
+	#syscall
+	
+end_loop: #should reach here after everything has been summed in $t1
+
+	li $v0, 1
+	move $a0, $t1
+	syscall #prints the result of the sum of the characters
+
