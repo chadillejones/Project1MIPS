@@ -11,9 +11,11 @@ main:
 	syscall
 	
 	la $t0, userInput #loads the string address in $t0
-	li $t1, 0 #initialized the sum of all the characters	
-		 
-loop
+	li $t1, 0 #initialized the sum of all the characters
+			 
+loop: #to loop through the characters of the string
+	lb $t2, 0($t0) #takes one character in the string
+	
 	#tell the system this is the end of file
 	li $v0, 10 
 	syscall
