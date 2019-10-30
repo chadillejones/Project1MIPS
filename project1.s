@@ -20,13 +20,15 @@ loop: #to loop through the characters of the string
 	
 	beq $t2, $t6, end_loop #ends loop when all the characters are used
 	
-	#tell the system this is the end of file
-	#li $v0, 10 
-	#syscall
+	
 	
 end_loop: #should reach here after everything has been summed in $t1
 
 	li $v0, 1
 	move $a0, $t1
 	syscall #prints the result of the sum of the characters
+	
+	#tell the system this is the end of file
+	li $v0, 10 
+	syscall
 
