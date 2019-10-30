@@ -10,7 +10,8 @@ main:
 	li $a1, 11 #specify the length of the input
 	syscall
 	
-	la $t0, userInput #losds the string address in $t0	
+	la $t0, userInput #loads the string address in $t0
+	li $t1, 0 #initialized the sum of all the characters	
 		 
 loop
 	#tell the system this is the end of file
