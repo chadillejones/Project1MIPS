@@ -10,8 +10,9 @@ main:
 	li $a1, 11 #specify the length of the input
 	syscall
 	
-#deleted as it was only to test the user input	
-	 
+	la $t0, userInput #losds the string address in $t0	
+		 
+loop
 	#tell the system this is the end of file
 	li $v0, 10 
 	syscall
