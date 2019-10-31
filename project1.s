@@ -39,4 +39,6 @@ end_loop: #should reach here after everything has been summed in $t1
 	#tell the system this is the end of file
 	li $v0, 10 
 	syscall
+	
+	
 
