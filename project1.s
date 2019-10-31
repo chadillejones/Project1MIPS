@@ -16,8 +16,8 @@ main:
 	li $t4, 48 #initialized a register to be equal to 0 #changed it from null to zero
 	li $t5, 65 #lowest ascii capital letter 
 	li $t7, 89 #highest ascii capital letter 
-	li $t6, 0x0A #initialized a new line to signal when the loop is complete
-			 
+	li $t6, 0x0A #initialized a new line to signal when the loop is complete		
+			  
 loop: #to loop through the characters of the string
 	lb $t2, 0($t0) #takes one character in the string
 	
@@ -27,7 +27,15 @@ loop: #to loop through the characters of the string
 	
 	beq $t2, $t4, skip_char #skip the current character if it is a 0
 	
-	 
+	blt $t2, $t5  not_capital_letter #checking if it is a capital letter within the range Base35
+	
+	bgt $t2, $t7 not_capital_letter 
+	
+	li $t8, 0 #initialize this to 0
+	
+	addi $t8, $t2, -55 #to calculate the decimal based on the capital letter
+	add $t1, $t1, $t8 #add the decimal value to the total
+	addi $t0, $t0, 1
 	j loop #returns the loop
 		
 	
@@ -48,4 +56,6 @@ skip_char: #moves the character without summation
 
 	addi $t0, $t0, 1
 	j loop #returns to the loop
+	
+not_capital_letter:
 	
