@@ -7,7 +7,7 @@ main:
 
 	li $v0, 8 #gets user input 
 	la $a0, userInput #sets it to the alloted variable
-	li $a1, 11 #specify the length of the input
+	li $a1, 12 #specify the length of the input #changed so the person can enter 10 characters and then enter button
 	syscall
 	
 	la $t0, userInput #loads the string address in $t0
@@ -15,7 +15,7 @@ main:
 	li $t3, 32 #initialized a space to check for spaces 
 	li $t4, 48 #initialized a register to be equal to 0 #changed it from null to zero
 	li $t5, 65 #lowest ascii capital letter 
-	li $t7, 89#highest ascii capital letter 
+	li $t7, 89 #highest ascii capital letter 
 	li $t6, 0x0A #initialized a new line to signal when the loop is complete
 			 
 loop: #to loop through the characters of the string
