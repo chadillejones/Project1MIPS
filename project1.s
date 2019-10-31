@@ -65,3 +65,8 @@ not_capital_letter:
 	li $s0, 97 #initialized the smallest lower case character(a)
 	li $s1, 121 #initialized the largest lower case character (y)
 	
+	blt $t2, $s0, not_an_acceptable_letter #branch if not within the range for common letters
+	
+	bgt $t2, $s1, not_an_acceptable_letter #same as previous comment
+	
+	
