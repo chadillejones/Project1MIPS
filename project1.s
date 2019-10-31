@@ -12,13 +12,16 @@ main:
 	
 	la $t0, userInput #loads the string address in $t0
 	li $t1, 0 #initialized the sum of all the characters
-	li $t3, 32 #initialized a space to check for spaces #changed this to a different register than $t2
+	li $t3, 32 #initialized a space to check for spaces 
 	li $t6, 0x0A #initialized a new line to signal when the loop is complete
 			 
 loop: #to loop through the characters of the string
 	lb $t2, 0($t0) #takes one character in the string
 	
 	beq $t2, $t6, end_loop #ends loop when all the characters are used
+	
+	
+	
 	
 	
 	
