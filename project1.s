@@ -31,15 +31,15 @@ loop: #to loop through the characters of the string
 	
 	beq $t2, $t4, skip_char #skip the current character if it is a 0
 	
+	li $t8, 0 #initialized this to 0 #move its initialization before branch
+	
 	blt $t2, $t5  not_capital_letter #checking if it is a capital letter within the range Base35
 	
 	bgt $t2, $t7 not_capital_letter 
 	
-	li $t8, 0 #initialize this to 0
-	
 	addi $t8, $t2, -55 #to calculate the decimal based on the capital letter
 	add $t1, $t1, $t8 #add the decimal value to the total
-	addi $t0, $t0, 1 #to shift the address after the summation of caapital letters is complete 
+	addi $t0, $t0, 1 #to shift the address after the summation of capital letters is complete 
 	j loop #returns the loop
 		
 	
@@ -68,5 +68,12 @@ not_capital_letter:
 	blt $t2, $s0, not_an_acceptable_letter #branch if not within the range for common letters
 	
 	bgt $t2, $s1, not_an_acceptable_letter #same as previous comment
+	
+	addi $t8, $t2, -87 #calculate the decimal for common letters
+	add $t1, $t1, $t8 #adding it to the sum variable
+	addi $t0, $t0, 1 #moving the address by 1
+	j loop #jumping back to the loop
+	
+not_an_acceptable_letter:
 	
 	
