@@ -81,4 +81,10 @@ not_an_acceptable_letter:
 	li $s3, 49 #initialized the smallest digit other than 0 (1)
 	li $s4, 57 #initialized the largest digit (9)
 	
+	blt $t2, $s3, skip_char #branch if a not a digit. Therefore it is a 0 number. Therefore skip character
+	
+	bgt $t2, $s4, skip_char #same as previous
+	
+	
+	
 	
