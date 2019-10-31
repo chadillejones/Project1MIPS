@@ -20,6 +20,8 @@ loop: #to loop through the characters of the string
 	
 	beq $t2, $t6, end_loop #ends loop when all the characters are used
 	
+	beq $t2, $t3, skip_char #skips the current character if it is a space
+	
 	
 	
 	
