@@ -25,7 +25,7 @@ loop: #to loop through the characters of the string
 	
 	beq $t2, $t4, skip_char #skip the current character if it is a 0
 	
-	jr $ra
+	jr $ra #returns the loop
 		
 	
 	
@@ -41,4 +41,6 @@ end_loop: #should reach here after everything has been summed in $t1
 	syscall
 	
 	
+skip_char: #moves the character without summation
 
+	
