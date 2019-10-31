@@ -43,4 +43,5 @@ end_loop: #should reach here after everything has been summed in $t1
 	
 skip_char: #moves the character without summation
 
+	addi $t0, $t0, 1
 	
