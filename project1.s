@@ -13,7 +13,7 @@ main:
 	la $t0, userInput #loads the string address in $t0
 	li $t1, 0 #initialized the sum of all the characters
 	li $t3, 32 #initialized a space to check for spaces 
-	li $t4, 0 #initialized a register to be equal to 0
+	li $t4, 48 #initialized a register to be equal to 0 #changed it from null to zero
 	li $t5, 65 #lowest ascii capital letter 
 	li $t7, 89#highest ascii capital letter 
 	li $t6, 0x0A #initialized a new line to signal when the loop is complete
@@ -26,6 +26,7 @@ loop: #to loop through the characters of the string
 	beq $t2, $t3, skip_char #skips the current character if it is a space
 	
 	beq $t2, $t4, skip_char #skip the current character if it is a 0
+	
 	 
 	j loop #returns the loop
 		
@@ -46,5 +47,5 @@ end_loop: #should reach here after everything has been summed in $t1
 skip_char: #moves the character without summation
 
 	addi $t0, $t0, 1
-	
+	j loop #returns to the loop
 	
