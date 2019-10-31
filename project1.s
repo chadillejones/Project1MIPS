@@ -23,6 +23,7 @@ main:
 	li $t6, 0x0A #initialized a new line to signal when the loop is complete		
 			  
 loop: #to loop through the characters of the string
+
 	lb $t2, 0($t0) #takes one character in the string
 	
 	beq $t2, $t6, end_loop #ends loop when all the characters are used
@@ -62,6 +63,7 @@ skip_char: #moves the character without summation
 	j loop #returns to the loop
 	
 not_capital_letter:
+
 	li $s0, 97 #initialized the smallest lower case character(a)
 	li $s1, 121 #initialized the largest lower case character (y)
 	
@@ -75,5 +77,8 @@ not_capital_letter:
 	j loop #jumping back to the loop
 	
 not_an_acceptable_letter:
+
+	li $s3, 49 #initialized the smallest digit other than 0 (1)
+	li $s4, 57 #initialized the largest digit (9)
 	
 	
