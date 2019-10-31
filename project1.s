@@ -1,3 +1,7 @@
+#Howard ID is @02856918. 
+#2856918%11=9
+#26+9=Base35 numbers
+#0-y; 0-Y
 .data #Declaring data
 userInput: .space 10 #stores the user input(10 chars)
 
@@ -14,8 +18,8 @@ main:
 	li $t1, 0 #initialized the sum of all the characters
 	li $t3, 32 #initialized a space to check for spaces 
 	li $t4, 48 #initialized a register to be equal to 0 #changed it from null to zero
-	li $t5, 65 #lowest ascii capital letter 
-	li $t7, 89 #highest ascii capital letter 
+	li $t5, 65 #lowest ascii capital letter (a)
+	li $t7, 89 #highest ascii capital letter (y)
 	li $t6, 0x0A #initialized a new line to signal when the loop is complete		
 			  
 loop: #to loop through the characters of the string
@@ -35,7 +39,7 @@ loop: #to loop through the characters of the string
 	
 	addi $t8, $t2, -55 #to calculate the decimal based on the capital letter
 	add $t1, $t1, $t8 #add the decimal value to the total
-	addi $t0, $t0, 1
+	addi $t0, $t0, 1 #to shift the address after the summation of caapital letters is complete 
 	j loop #returns the loop
 		
 	
@@ -58,4 +62,6 @@ skip_char: #moves the character without summation
 	j loop #returns to the loop
 	
 not_capital_letter:
+	li $s0, 97 #initialized the smallest lower case character(a)
+	li $s1, 121 #initialized the largest lower case character (y)
 	
