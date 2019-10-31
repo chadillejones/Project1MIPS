@@ -45,3 +45,4 @@ skip_char: #moves the character without summation
 
 	addi $t0, $t0, 1
 	
+	
