@@ -25,8 +25,8 @@ loop: #to loop through the characters of the string
 	
 	beq $t2, $t4, skip_char #skip the current character if it is a 0
 	
-	
-	
+	jr $ra
+		
 	
 	
 	
