@@ -85,6 +85,9 @@ not_an_acceptable_letter:
 	
 	bgt $t2, $s4, skip_char #same as previous
 	
-	
+	addi $t8, $t2, -48 #calculate the decimal value
+	add $t1, $t1, $t8 #add it to the sum variable
+	addi $t0, $t0, 1 #moving the address by 1
+	j loop #jumping back to the loop
 	
 	
