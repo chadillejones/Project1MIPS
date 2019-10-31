@@ -28,6 +28,8 @@ loop: #to loop through the characters of the string
 	
 	
 	
+	
+	
 end_loop: #should reach here after everything has been summed in $t1
 
 	li $v0, 1
