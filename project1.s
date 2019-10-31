@@ -28,7 +28,9 @@ loop: #to loop through the characters of the string
 	beq $t2, $t4, skip_char #skip the current character if it is a 0
 	
 	
-	jr $ra #returns the loop
+	
+	
+	j loop #returns the loop
 		
 	
 	
@@ -46,6 +48,6 @@ end_loop: #should reach here after everything has been summed in $t1
 	
 skip_char: #moves the character without summation
 
-	addi $t0, $t0, 1
+	#addi $t0, $t0, 1
 	
 	
