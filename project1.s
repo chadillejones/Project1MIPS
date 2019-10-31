@@ -13,6 +13,7 @@ main:
 	la $t0, userInput #loads the string address in $t0
 	li $t1, 0 #initialized the sum of all the characters
 	li $t3, 32 #initialized a space to check for spaces 
+	li $t4, 0 #initialized a register to be equal to 0
 	li $t6, 0x0A #initialized a new line to signal when the loop is complete
 			 
 loop: #to loop through the characters of the string
@@ -22,7 +23,7 @@ loop: #to loop through the characters of the string
 	
 	beq $t2, $t3, skip_char #skips the current character if it is a space
 	
-	
+	beq $t2, $t4, skip_char #skip the current character if it is a 0
 	
 	
 	
